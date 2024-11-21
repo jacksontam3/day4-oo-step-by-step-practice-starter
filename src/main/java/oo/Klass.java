@@ -8,10 +8,12 @@ public class Klass {
     private int number;
     private List<Student> studentslist;
     private Student leader;
+    private List<Teacher> teacherslist;
 
     public Klass(int number) {
         this.number = number;
         this.studentslist = new ArrayList<>();
+        this.teacherslist = new ArrayList<>();
     }
 
     @Override
@@ -26,9 +28,14 @@ public class Klass {
         studentslist.add(student);
     }
 
+    public void attach(Teacher teacher) {
+        teacherslist.add(teacher);
+    }
+
     public void assignLeader(Student student) {
         if (studentslist.contains(student)) {
             this.leader = student;
+            notifyLeaderAssignment(student);
         } else {
             System.out.println("It is not one of us.");
         }
@@ -49,5 +56,16 @@ public class Klass {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    private void notifyLeaderAssignment(Student student) {
+        for (Teacher teacher : teacherslist) {
+            System.out.printf("I am %s, teacher of Class %d. I know %s become Leader.%n", teacher.getName(), number, student.getName());
+        }
+        for (Student s : studentslist) {
+            if (!s.equals(student)) {
+                System.out.printf("I am %s, student of Class %d. I know %s become Leader.%n", s.getName(), number, student.getName());
+            }
+        }
     }
 }
