@@ -36,4 +36,13 @@ public class Teacher extends Person {
         this.klass = klass;
     }
 
+    public boolean isTeaching(Student student) {
+        for (Klass klass : this.klass) {
+            if (student.isIn(klass)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
