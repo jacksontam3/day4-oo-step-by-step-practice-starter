@@ -7,7 +7,7 @@ public class Student extends Person {
     private Klass klass;
 
     public Student(int id, String name, int age) {
-        super(id,name,age);
+        super(id, name, age);
     }
 
 
@@ -15,10 +15,9 @@ public class Student extends Person {
     public String introduce() {
         String introduction = String.format("My name is %s. I am %d years old. I am a student.", getName(), getAge());
         if (klass != null) {
-            introduction += String.format(" I am in class %d.", klass.getNumber());
-            if (klass.isLeader(this)) {
-                introduction += String.format(" I am the leader of class %d.", klass.getNumber());
-            }
+            introduction += klass.isLeader(this)
+                    ? String.format(" I am the leader of class %d.", klass.getNumber())
+                    : String.format(" I am in class %d.", klass.getNumber());
         }
         return introduction;
     }
@@ -32,13 +31,10 @@ public class Student extends Person {
         klass.addStudent(this);
     }
 
-    public boolean isIn (Klass klass){
-        if(klass != null) return klass == this.klass;
+    public boolean isIn(Klass klass) {
+        if (klass != null) return klass == this.klass;
         return false;
     }
-
-
-
 
 
 }
