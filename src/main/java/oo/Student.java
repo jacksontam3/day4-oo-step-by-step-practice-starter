@@ -2,6 +2,8 @@ package oo;
 
 public class Student extends Person {
 
+    public static final String OCCUPATION = "student";
+
     public Student(int id, String name, int age) {
         super(id,name,age);
     }
@@ -9,7 +11,7 @@ public class Student extends Person {
 
     @Override
     public String introduce () {
-        return "My name is " + this.getName() + ". I am " + this.getAge() + " years old."+ " I am a student.";
+        return String.format("My name is %s. I am %d years old. I am a %s.",getName(), getAge(), OCCUPATION);
     }
 
 
