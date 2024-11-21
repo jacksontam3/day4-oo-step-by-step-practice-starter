@@ -82,19 +82,19 @@ public class TeacherTest {
 
         assertThat(isTeaching).isFalse();
     }
-//
-//    @Test
-//    public void should_return_true_when_isTeaching_given_student_in_the_class_taught_by_teacher() {
-//        Klass klass1 = new Klass(1);
-//        Student tom = new Student(1, "Tom", 18);
-//        tom.join(klass1);
-//        Teacher jerry = new Teacher(1, "Jerry", 21);
-//        jerry.assignTo(klass1);
-//
-//        boolean isTeaching = jerry.isTeaching(tom);
-//
-//        assertThat(isTeaching).isTrue();
-//    }
+
+    @Test
+    public void should_return_true_when_isTeaching_given_student_in_the_class_taught_by_teacher() {
+        Klass klass1 = new Klass(1);
+        Student tom = new Student(1, "Tom", 18);
+        tom.join(klass1);
+        Teacher jerry = new Teacher(1, "Jerry", 21);
+        jerry.assignTo(klass1);
+
+        boolean isTeaching = jerry.isTeaching(tom);
+
+        assertThat(isTeaching).isTrue();
+    }
 //
 //    @Test
 //    public void should_return_true_when_isTeaching_given_student_in_any_class_taught_by_teacher() {
