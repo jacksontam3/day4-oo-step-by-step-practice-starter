@@ -16,7 +16,9 @@ public class Teacher extends Person {
 
     @Override
     public String introduce () {
-        return String.format("My name is %s. I am %d years old. I am a %s. I teach Class %s.", getName(), getAge(), OCCUPATION, klass.stream().map(k -> String.valueOf(k.getNumber())).collect(Collectors.joining(", ")));
+        return String.format("My name is %s. I am %d years old. I am a %s.%s", getName(), getAge(), OCCUPATION, klass.isEmpty() ? "" : " I teach Class " + klass.stream()
+                .map(k -> String.valueOf(k.getNumber()))
+                .collect(Collectors.joining(", ")));
     }
 
     public void assignTo(Klass klass) {
