@@ -22,14 +22,14 @@ public class StudentTest {
 
         assertThat(introduce).isEqualTo("My name is Jim. I am 19 years old. I am a student.");
     }
-//
-//    @Test
-//    public void should_return_true_when_equals_given_two_students_with_same_id() {
-//        Student student1 = new Student(1, "Tom", 18);
-//        Student student2 = new Student(1, "Tommy", 19);
-//
-//        assertThat(student1).isEqualTo(student2);
-//    }
+
+    @Test
+    public void should_return_true_when_equals_given_two_students_with_same_id() {
+        Student student1 = new Student(1, "Tom", 18);
+        Student student2 = new Student(1, "Tommy", 19);
+
+        assertThat(student1).isEqualTo(student2);
+    }
 //
 //    @Test
 //    public void should_return_false_when_equals_given_two_students_with_different_id() {
