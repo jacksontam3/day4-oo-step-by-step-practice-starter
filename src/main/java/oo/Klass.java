@@ -1,5 +1,6 @@
 package oo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ public class Klass {
 
     public Klass(int number) {
         this.number = number;
-        this.studentslist = null;
+        this.studentslist = new ArrayList<>();
     }
 
     @Override
