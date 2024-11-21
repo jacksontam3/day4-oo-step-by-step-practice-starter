@@ -24,7 +24,7 @@ public class Klass {
         return number == klass.number;
     }
 
-    public void addStudent(Student student) {
+    public void attach(Student student) {
         studentslist.add(student);
     }
 
