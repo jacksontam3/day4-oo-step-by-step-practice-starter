@@ -2,6 +2,7 @@ package oo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person {
 
@@ -15,7 +16,7 @@ public class Teacher extends Person {
 
     @Override
     public String introduce () {
-        return String.format("My name is %s. I am %d years old. I am a %s.",getName(), getAge(), OCCUPATION);
+        return String.format("My name is %s. I am %d years old. I am a %s. I teach Class %s.", getName(), getAge(), OCCUPATION, klass.stream().map(k -> String.valueOf(k.getNumber())).collect(Collectors.joining(", ")));
     }
 
     public void assignTo(Klass klass) {
@@ -26,4 +27,13 @@ public class Teacher extends Person {
         if (this.klass == null)return false;
         return this.klass.contains(klass);
     }
+
+    public List<Klass> getKlass() {
+        return klass;
+    }
+
+    public void setKlass(List<Klass> klass) {
+        this.klass = klass;
+    }
+
 }
