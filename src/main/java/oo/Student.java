@@ -12,8 +12,15 @@ public class Student extends Person {
 
 
     @Override
-    public String introduce () {
-        return String.format("My name is %s. I am %d years old. I am a %s. I am in class %d.",getName(), getAge(), OCCUPATION, getId());
+    public String introduce() {
+        String introduction = String.format("My name is %s. I am %d years old. I am a student.", getName(), getAge());
+        if (klass != null) {
+            introduction += String.format(" I am in class %d.", klass.getNumber());
+            if (klass.isLeader(this)) {
+                introduction += String.format(" I am the leader of class %d.", klass.getNumber());
+            }
+        }
+        return introduction;
     }
 
     public Klass getKlass() {
@@ -22,6 +29,7 @@ public class Student extends Person {
 
     public void join(Klass klass) {
         this.klass = klass;
+        klass.addStudent(this);
     }
 
     public boolean isIn (Klass klass){
