@@ -13,7 +13,7 @@ public class Student extends Person {
 
     @Override
     public String introduce () {
-        return String.format("My name is %s. I am %d years old. I am a %s.",getName(), getAge(), OCCUPATION);
+        return String.format("My name is %s. I am %d years old. I am a %s. I am in class %d.",getName(), getAge(), OCCUPATION, getId());
     }
 
     public Klass getKlass() {
