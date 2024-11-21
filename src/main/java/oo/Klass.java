@@ -63,8 +63,8 @@ public class Klass {
             System.out.printf("I am %s, teacher of Class %d. I know %s become Leader.%n", teacher.getName(), number, student.getName());
         }
         for (Student s : studentslist) {
-            if (!s.equals(student)) {
-                System.out.printf("I am %s, student of Class %d. I know %s become Leader.%n", s.getName(), number, student.getName());
+            if (!s.equals(leader)) {
+                System.out.printf("I am %s, student of Class %d. I know %s become Leader.%n", s.getName(), number, leader.getName());
             }
         }
     }
